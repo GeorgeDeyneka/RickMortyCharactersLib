@@ -1,9 +1,15 @@
 <main class="container">
   <div class="char__wrapper">
     <div class="char__item" *ngFor="let item of data">
-      <h2>
-        {{ item.name }}
-      </h2>
+      <img class="char__img" [src]="item.image" alt="character-image" />
+      <div class="char__title">
+        <h3 class="char__name">
+          {{ item.name }}
+        </h3>
+        <p class="char__species">
+          {{ item.species }}
+        </p>
+      </div>
     </div>
   </div>
 </main>

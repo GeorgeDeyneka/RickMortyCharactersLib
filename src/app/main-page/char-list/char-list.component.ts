@@ -1,20 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICharacter } from 'src/app/models/interfaces/character.interface';
 import { BaseHttpService } from 'src/app/shared/services/base-http.service';
-
-interface ICharacter {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-  origin: object;
-  location: object;
-  image: string;
-  episode: Array<any>;
-  url: string;
-  created: string;
-}
 
 @Component({
   selector: 'app-char-list',
@@ -29,7 +15,6 @@ export class CharListComponent implements OnInit {
   ngOnInit(): void {
     this.baseHttpService.getList().subscribe((data: any) => {
       this.data = data.results;
-      console.log(this.data);
     });
   }
 }

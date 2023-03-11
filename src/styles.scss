@@ -1,8 +1,34 @@
 @import "./styles/reset.scss";
 @import "./styles/typography.scss";
 
-
 body {
   font-family: "Roboto";
   font-weight: 400;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #00000099;
+}
+
+@media (min-width: 320px) {
+  .container {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
 }
