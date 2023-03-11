@@ -1,0 +1,13 @@
+    <div class="char__item">
+      <img class="char__img" [src]="charItem.image" alt="character-image" />
+      <div class="char__title">
+        <h3 class="char__name">
+          <a class="char__link" [routerLink]="['/library', charItem.id]">
+            {{ charItem.name }}
+          </a>
+        </h3>
+        <p class="char__species">
+          {{ charItem.species }}
+        </p>
+      </div>
+    </div>

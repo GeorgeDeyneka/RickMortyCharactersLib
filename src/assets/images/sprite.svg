@@ -1,0 +1,10 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-search" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M15.5 15H14.71L14.43 14.73C15.41 13.59 16 12.11 16 10.5C16 6.91 13.09 4 9.5 4C5.91 4 3 6.91 3 10.5C3 14.09 5.91 17 9.5 17C11.11 17 12.59 16.41 13.73 15.43L14 15.71V16.5L19 21.49L20.49 20L15.5 15ZM9.5 15C7.01 15 5 12.99 5 10.5C5 8.01 7.01 6 9.5 6C11.99 6 14 8.01 14 10.5C14 12.99 11.99 15 9.5 15Z" fill="black" fill-opacity="0.54"/>
+<symbol id="icon-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="black"/>
+</symbol>
+</defs>
+</svg>
+<!-- <path fill="#1b63f0" style="fill: var(--color1, #1b63f0)" d="M39.486 43.884l-6.272-13.888c2.128-1.96 3.808-4.424 4.928-7.224 0.28-0.784-0.112-1.68-0.896-2.016s-1.68 0.112-2.016 0.896c-0.784 2.016-1.96 3.864-3.416 5.376l-4.256-9.464c0.672-1.232 1.008-2.576 -->

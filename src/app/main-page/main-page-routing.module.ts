@@ -7,17 +7,19 @@ import { MainPageComponent } from './main-page.component';
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
     component: MainPageComponent,
     children: [
       {
         path: '',
         pathMatch: 'full',
+        redirectTo: 'library',
+      },
+      {
+        path: 'library',
         component: CharListComponent,
       },
       {
-        path: 'char-details/:id',
-        pathMatch: 'full',
+        path: 'library/:id',
         component: CharDetailsComponent,
       },
     ],

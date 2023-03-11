@@ -6,9 +6,10 @@ import { MainPageComponent } from './main-page.component';
 import { CharListComponent } from './char-list/char-list.component';
 import { CharDetailsComponent } from './char-details/char-details.component';
 import { RouterModule } from '@angular/router';
+import { CharItemComponent } from './char-item/char-item.component';
 
 @NgModule({
-  declarations: [MainPageComponent, CharListComponent, CharDetailsComponent],
+  declarations: [MainPageComponent, CharListComponent, CharDetailsComponent, CharItemComponent],
   imports: [CommonModule, MainPageRoutingModule, RouterModule],
   exports: [MainPageComponent],
 })
