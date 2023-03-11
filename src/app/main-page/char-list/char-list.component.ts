@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ICharacter } from 'src/app/models/interfaces/character.interface';
 import { BaseHttpService } from 'src/app/shared/services/base-http.service';
 
 @Component({
@@ -7,14 +8,13 @@ import { BaseHttpService } from 'src/app/shared/services/base-http.service';
   styleUrls: ['./char-list.component.scss'],
 })
 export class CharListComponent implements OnInit {
-  constructor(private baseHttpService: BaseHttpService) { }
+  constructor(private baseHttpService: BaseHttpService) {}
 
-  public data: any = []
+  public data: Array<ICharacter> = [];
 
   ngOnInit(): void {
-    this.baseHttpService.getList().subscribe((data) => {
-      this.data = data;
-      console.log(this.data)
-    })
+    this.baseHttpService.getList().subscribe((data: any) => {
+      this.data = data.results;
+    });
   }
 }
