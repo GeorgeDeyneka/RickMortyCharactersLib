@@ -1,35 +1,11 @@
 @media (min-width: 320px) {
   .logo {
     &__wrapper {
-      padding: 66px 0 34px;
+      padding: 66px 0 18px;
     }
 
     &__img {
       margin: 0 auto;
-    }
-  }
-
-  .input {
-    &__wrapper {
-      max-width: 312px;
-      position: relative;
-      margin: 0 auto;
-      padding-bottom: 32px;
-    }
-
-    &__search {
-      display: flex;
-      width: 100%;
-      border-radius: 7px;
-      height: 56px;
-      border: 1px solid #00000080;
-      padding-left: 47px;
-    }
-
-    &__icon {
-      position: absolute;
-      left: 16px;
-      top: 16px;
     }
   }
 
@@ -39,6 +15,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, 312px);
       gap: 32px 26.5px;
+      padding: 16px 0 50px;
     }
   }
 }
@@ -46,14 +23,7 @@
 @media (min-width: 600px) {
   .logo {
     &__wrapper {
-      padding: 86px 0 16px;
-    }
-  }
-
-  .input {
-    &__wrapper {
-      max-width: none;
-      padding-bottom: 60px;
+      padding: 86px 0 0;
     }
   }
 
@@ -61,15 +31,7 @@
     &__wrapper {
       grid-template-columns: repeat(auto-fill, 240px);
       gap: 24px 20px;
-    }
-  }
-}
-
-@media (min-width: 1024px) {
-  .logo {
-    &__img {
-      position: relative;
-      left: 15px;
+      padding: 44px 0 100px;
     }
   }
 }

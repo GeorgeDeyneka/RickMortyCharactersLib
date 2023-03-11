@@ -2,16 +2,13 @@
   <div class="logo__wrapper">
     <img
       class="logo__img"
-      src="../../../assets/images/logo.png"
+      src="assets/images/logo.png"
       alt="rick-and-morty-logo"
     />
   </div>
-  <div class="input__wrapper">
-    <input class="input__search" placeholder="Filter by name..." type="text" />
-    <svg class="input__icon" width="24" height="24">
-      <use href="../../../assets/images/sprite.svg#icon-search"></use>
-    </svg>
-  </div>
+
+  <app-input-search></app-input-search>
+
   <div class="char__wrapper">
     <app-char-item [charItem]="item" *ngFor="let item of data"></app-char-item>
   </div>

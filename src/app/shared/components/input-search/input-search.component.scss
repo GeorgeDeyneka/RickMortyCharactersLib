@@ -1,0 +1,33 @@
+@media (min-width: 320px) {
+  .input {
+    &__wrapper {
+      max-width: 312px;
+      position: relative;
+      margin: 0 auto;
+      padding: 16px 0;
+    }
+
+    &__search {
+      display: flex;
+      width: 100%;
+      border-radius: 7px;
+      height: 56px;
+      border: 1px solid #00000080;
+      padding-left: 47px;
+    }
+
+    &__icon {
+      position: absolute;
+      left: 16px;
+      top: 32px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .input {
+    &__wrapper {
+      max-width: none;
+    }
+  }
+}
