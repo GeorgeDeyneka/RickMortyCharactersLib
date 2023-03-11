@@ -6,10 +6,17 @@ import { MainPageComponent } from './main-page.component';
 import { CharListComponent } from './char-list/char-list.component';
 import { CharDetailsComponent } from './char-details/char-details.component';
 import { RouterModule } from '@angular/router';
+import { CharItemComponent } from './char-item/char-item.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [MainPageComponent, CharListComponent, CharDetailsComponent],
-  imports: [CommonModule, MainPageRoutingModule, RouterModule],
+  declarations: [
+    MainPageComponent,
+    CharListComponent,
+    CharDetailsComponent,
+    CharItemComponent,
+  ],
+  imports: [CommonModule, RouterModule, MainPageRoutingModule, SharedModule],
   exports: [MainPageComponent],
 })
 export class MainPageModule {}

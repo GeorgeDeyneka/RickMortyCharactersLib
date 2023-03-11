@@ -1,1 +1,43 @@
-<p>char-details works!</p>
+<app-go-back></app-go-back>
+<main class="container" *ngIf="charItem">
+  <div class="char__wrapper">
+    <img class="char__img" [src]="charItem.image" alt="character-image" />
+    <h1 class="char__title">{{ charItem.name }}</h1>
+  </div>
+
+  <div class="char__info">
+    <h3 class="char__subtitle">Informations</h3>
+    <ul class="char__list">
+      <li class="char__item">
+        <h4>Gender</h4>
+        <p>
+          {{ charItem.gender }}
+        </p>
+      </li>
+      <li class="char__item">
+        <h4>Status</h4>
+        <p>
+          {{ charItem.status }}
+        </p>
+      </li>
+      <li class="char__item">
+        <h4>Specie</h4>
+        <p>
+          {{ charItem.species }}
+        </p>
+      </li>
+      <li class="char__item">
+        <h4>Origin</h4>
+        <p>
+          {{ charItem.origin.name }}
+        </p>
+      </li>
+      <li class="char__item">
+        <h4>Type</h4>
+        <p>
+          {{ charItem.type || "Unknown" }}
+        </p>
+      </li>
+    </ul>
+  </div>
+</main>

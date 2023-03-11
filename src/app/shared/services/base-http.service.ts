@@ -17,6 +17,6 @@ export class BaseHttpService {
   }
 
   getById<T>(id: string | number): Observable<T> {
-    return this.http.get<T>(this.BASE_URL + this.path + id);
+    return this.http.get<T>(this.BASE_URL + this.path + '/' + id);
   }
 }

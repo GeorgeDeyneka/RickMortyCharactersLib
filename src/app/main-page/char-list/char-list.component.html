@@ -1,15 +1,15 @@
 <main class="container">
+  <div class="logo__wrapper">
+    <img
+      class="logo__img"
+      src="assets/images/logo.png"
+      alt="rick-and-morty-logo"
+    />
+  </div>
+
+  <app-input-search></app-input-search>
+
   <div class="char__wrapper">
-    <div class="char__item" *ngFor="let item of data">
-      <img class="char__img" [src]="item.image" alt="character-image" />
-      <div class="char__title">
-        <h3 class="char__name">
-          {{ item.name }}
-        </h3>
-        <p class="char__species">
-          {{ item.species }}
-        </p>
-      </div>
-    </div>
+    <app-char-item [charItem]="item" *ngFor="let item of data"></app-char-item>
   </div>
 </main>

@@ -16,5 +16,6 @@ export class CharListComponent implements OnInit {
     this.baseHttpService.getList().subscribe((data: any) => {
       this.data = data.results;
     });
+
   }
 }
