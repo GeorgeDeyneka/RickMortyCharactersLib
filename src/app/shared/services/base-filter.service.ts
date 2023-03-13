@@ -20,16 +20,12 @@ export class BaseFilterService {
   }
 
   changeData(elem: filterConfig) {
-    // if (elem.sort) {
-    //   this.setSort(elem);
-    // }
-
     if (elem.search) {
       this.setSearch(elem, 'name');
     }
 
-    if (!elem.search) {
-      this.resetFilterData();
+    if (elem.sort) {
+      this.setSort(elem);
     }
 
     return this.data;
@@ -43,19 +39,15 @@ export class BaseFilterService {
     );
   }
 
-  // setSort(elem: filterConfig) {
-  //   this.data = [...(elem.search ? this.data : this.baseData)];
+  setSort(elem: filterConfig) {
+    this.data = [...(elem.search ? this.data : this.baseData)];
 
-  //   console.log(elem);
-  //   this.data.sort(this.byField(elem.sort));
-  // }
+    console.log(elem);
+    this.data.sort(this.byField(elem.sort));
+  }
 
   byField(field: string) {
     return (a: any, b: any) =>
-      a[field].toLowerCase() < b[field].toLowerCase() ? 1 : -1;
-  }
-
-  resetFilterData() {
-    this.data = this.baseData;
+      a[field].toLowerCase() > b[field].toLowerCase() ? 1 : -1;
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { filterConfig } from 'src/app/models/interfaces/filter-config.interface';
+import { SessionStorageService } from './session-storage.service';
 
 const DEFAULT_CONFIGURATION: filterConfig = {
   search: '',
@@ -11,11 +12,12 @@ const DEFAULT_CONFIGURATION: filterConfig = {
   providedIn: 'root',
 })
 export class SearchConfigService {
-  public configuration$: BehaviorSubject<filterConfig> = new BehaviorSubject(
-    DEFAULT_CONFIGURATION
-  );
+  public configuration$: BehaviorSubject<filterConfig> = new BehaviorSubject({
+    ...DEFAULT_CONFIGURATION,
+    search: this.sessionStorageService.getData('searchValue'),
+  });
 
-  constructor() {}
+  constructor(private sessionStorageService: SessionStorageService) {}
 
   get defaultConfig() {
     return this.configuration$.getValue();

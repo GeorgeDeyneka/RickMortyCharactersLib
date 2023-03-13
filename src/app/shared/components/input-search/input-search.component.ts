@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { debounceTime, fromEvent, map } from 'rxjs';
 import { SearchConfigService } from '../../services/search-config.service';
+import { SessionStorageService } from '../../services/session-storage.service';
 
 @Component({
   selector: 'app-input-search',
@@ -15,8 +16,12 @@ import { SearchConfigService } from '../../services/search-config.service';
 })
 export class InputSearchComponent implements OnInit, AfterViewInit {
   @ViewChild('searchInput') searchInput: ElementRef;
+  public value: string = this.sessionStorageService.getData('searchValue');
 
-  constructor(private searchConfigService: SearchConfigService) {}
+  constructor(
+    private searchConfigService: SearchConfigService,
+    private sessionStorageService: SessionStorageService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -28,6 +33,7 @@ export class InputSearchComponent implements OnInit, AfterViewInit {
       )
       .subscribe((data) => {
         this.searchConfigService.setSearch(data);
+        this.sessionStorageService.setData('searchValue', data);
       });
   }
 }

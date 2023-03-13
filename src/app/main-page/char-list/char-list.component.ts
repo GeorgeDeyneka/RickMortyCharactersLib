@@ -23,13 +23,17 @@ export class CharListComponent implements OnInit {
   private dataSubj$: Subscription;
 
   ngOnInit(): void {
-    this.dataSubj$ = this.baseHttpService.getList<Array<ICharacter>>().subscribe((data: any) => {
-      this.data = this.baseFilterService.setData(data.results);
-    });
+    this.dataSubj$ = this.baseHttpService
+      .getList<Array<ICharacter>>()
+      .subscribe((data: any) => {
+        this.data = this.baseFilterService.setData(data.results);
 
-    this.filterSubj$ = this.searchConfigService.configuration$.subscribe(
-      (elem) => this.changeData(elem)
-    );
+        if (this.data) {
+          this.filterSubj$ = this.searchConfigService.configuration$.subscribe(
+            (elem) => this.changeData(elem)
+          );
+        }
+      });
   }
 
   changeData(elem: filterConfig) {
