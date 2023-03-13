@@ -1,13 +1,13 @@
 @media (min-width: 320px) {
   .nav {
     &__link {
-      font-family: 'Karla';
+      font-family: "Karla";
       font-weight: 700;
       padding: 24px;
       display: flex;
       gap: 8px;
       text-decoration: none;
-      color: #000;
+      color: var(--black);
       letter-spacing: 1.3px;
     }
   }

@@ -4,6 +4,7 @@ import { filterConfig } from 'src/app/models/interfaces/filter-config.interface'
 
 const DEFAULT_CONFIGURATION: filterConfig = {
   search: '',
+  sort: 'name',
 };
 
 @Injectable({
@@ -28,6 +29,13 @@ export class SearchConfigService {
     this.configuration$.next({
       ...this.defaultConfig,
       search,
+    });
+  }
+
+  setSort(sort: string) {
+    this.configuration$.next({
+      ...this.defaultConfig,
+      sort,
     });
   }
 }

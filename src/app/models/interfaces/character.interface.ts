@@ -5,10 +5,19 @@ export interface ICharacter {
   species: string;
   type: string;
   gender: string;
-  origin: object;
-  location: object;
+  origin: IOrigin;
+  location: ILocation;
   image: string;
-  episode: Array<any>;
+  episode: Array<string>;
   url: string;
   created: string;
+}
+
+interface IOrigin extends IObject {}
+
+interface ILocation extends IObject {}
+
+interface IObject {
+  name: string;
+  url: string;
 }

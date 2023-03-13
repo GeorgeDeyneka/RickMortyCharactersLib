@@ -11,7 +11,7 @@
 
     &__subtitle {
       padding: 2px 0;
-      color: #8e8e93;
+      color: var(--gray-title);
     }
 
     &__list {
@@ -20,7 +20,7 @@
 
     &__item {
       padding: 9.7px 0;
-      border-bottom: 1px solid #21212114;
+      border-bottom: 1px solid var(--gray-border);
     }
 
     &__img {
@@ -28,7 +28,7 @@
       width: 160px;
       height: 158px;
       border-radius: 50%;
-      border: 5px solid #f2f2f7;
+      border: 5px solid var(--ligth-gray-border);
     }
   }
 }

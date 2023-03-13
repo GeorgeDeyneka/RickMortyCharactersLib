@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ICharacter } from 'src/app/models/interfaces/character.interface';
 import { filterConfig } from 'src/app/models/interfaces/filter-config.interface';
+import { BaseFilterService } from 'src/app/shared/services/base-filter.service';
 import { BaseHttpService } from 'src/app/shared/services/base-http.service';
 import { SearchConfigService } from 'src/app/shared/services/search-config.service';
-import { SearchFilterService } from 'src/app/shared/services/search-filter.service';
 
 @Component({
   selector: 'app-char-list',
@@ -15,7 +15,7 @@ export class CharListComponent implements OnInit {
   constructor(
     private baseHttpService: BaseHttpService,
     private searchConfigService: SearchConfigService,
-    private searchFilterService: SearchFilterService
+    private baseFilterService: BaseFilterService
   ) {}
 
   public data: Array<ICharacter> = [];
@@ -23,8 +23,8 @@ export class CharListComponent implements OnInit {
   private dataSubj$: Subscription;
 
   ngOnInit(): void {
-    this.dataSubj$ = this.baseHttpService.getList().subscribe((data: any) => {
-      this.data = this.searchFilterService.setData(data.results);
+    this.dataSubj$ = this.baseHttpService.getList<Array<ICharacter>>().subscribe((data: any) => {
+      this.data = this.baseFilterService.setData(data.results);
     });
 
     this.filterSubj$ = this.searchConfigService.configuration$.subscribe(
@@ -33,7 +33,7 @@ export class CharListComponent implements OnInit {
   }
 
   changeData(elem: filterConfig) {
-    this.data = this.searchFilterService.changeData(elem);
+    this.data = this.baseFilterService.changeData(elem);
   }
 
   ngOnDestroy() {

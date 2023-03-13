@@ -12,8 +12,8 @@ export class BaseHttpService {
 
   private BASE_URL: string = 'https://rickandmortyapi.com/api/';
 
-  getList(params: string = '') {
-    return this.http.get(this.BASE_URL + this.path + params);
+  getList<T>(params: string = ''): Observable<T> {
+    return this.http.get<T>(this.BASE_URL + this.path + params);
   }
 
   getById<T>(id: string | number): Observable<T> {
