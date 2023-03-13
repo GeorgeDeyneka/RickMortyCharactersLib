@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ICharacter } from 'src/app/models/interfaces/character.interface';
 import { BaseHttpService } from 'src/app/shared/services/base-http.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { BaseHttpService } from 'src/app/shared/services/base-http.service';
   styleUrls: ['./char-details.component.scss'],
 })
 export class CharDetailsComponent implements OnInit {
-  public charItem: any;
+  public charItem: ICharacter;
 
   constructor(
     private baseHttpService: BaseHttpService,
@@ -18,7 +19,7 @@ export class CharDetailsComponent implements OnInit {
   ngOnInit(): void {
     const id = this.actRouter.snapshot.paramMap.get('id');
 
-    this.baseHttpService.getById(id!).subscribe((item) => {
+    this.baseHttpService.getById<ICharacter>(id!).subscribe((item) => {
       this.charItem = item;
     });
   }

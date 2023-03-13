@@ -1,6 +1,12 @@
-  <div class="input__wrapper">
-    <input class="input__search" placeholder="Filter by name..." type="text" />
-    <svg class="input__icon" width="24" height="24">
-      <use href="assets/images/sprite.svg#icon-search"></use>
-    </svg>
-  </div>
+<div class="input__wrapper">
+  <input
+    #searchInput
+    [ngModel]="value"
+    class="input__search"
+    placeholder="Filter by name..."
+    type="text"
+  />
+  <svg class="input__icon" width="24" height="24">
+    <use href="assets/images/sprite.svg#icon-search"></use>
+  </svg>
+</div>
