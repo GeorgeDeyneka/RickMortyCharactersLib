@@ -1,0 +1,6 @@
+<div>
+  <button #prevBtn [disabled]="currentPage === 1" (click)="decrement()"><</button>
+  <h4>Page {{ currentPage }} of {{ maxPage }}</h4>
+  <h4>Items: {{ collectionLength }}</h4>
+  <button #nextBtn [disabled]="currentPage >= maxPage" (click)="increment()">></button>
+</div>

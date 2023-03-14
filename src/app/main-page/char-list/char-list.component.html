@@ -9,7 +9,17 @@
 
   <app-input-search></app-input-search>
 
-  <div class="char__wrapper">
-    <app-char-item [charItem]="item" *ngFor="let item of data"></app-char-item>
+  <div *ngIf="slicedData.length" class="char__wrapper">
+    <app-char-item
+      [charItem]="item"
+      *ngFor="let item of slicedData"
+    ></app-char-item>
   </div>
+  <app-pagination
+    *ngIf="slicedData"
+    [itemsPerPage]="8"
+    [currentPage]="currentPage"
+    [inputData]="data"
+    (OutputEmit)="setDataForCurrent($event)"
+  ></app-pagination>
 </main>

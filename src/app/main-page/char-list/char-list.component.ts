@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ICharacter } from 'src/app/models/interfaces/character.interface';
 import { filterConfig } from 'src/app/models/interfaces/filter-config.interface';
@@ -10,17 +15,22 @@ import { SearchConfigService } from 'src/app/shared/services/search-config.servi
   selector: 'app-char-list',
   templateUrl: './char-list.component.html',
   styleUrls: ['./char-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CharListComponent implements OnInit {
   constructor(
     private baseHttpService: BaseHttpService,
     private searchConfigService: SearchConfigService,
-    private baseFilterService: BaseFilterService
+    private baseFilterService: BaseFilterService,
+    private cdRef: ChangeDetectorRef
   ) {}
 
   public data: Array<ICharacter> = [];
+  public slicedData: Array<ICharacter> = [];
   private filterSubj$: Subscription;
   private dataSubj$: Subscription;
+  public pageIndex: number;
+  public currentPage: number = 1;
 
   ngOnInit(): void {
     this.dataSubj$ = this.baseHttpService
@@ -32,12 +42,19 @@ export class CharListComponent implements OnInit {
           this.filterSubj$ = this.searchConfigService.configuration$.subscribe(
             (elem) => this.changeData(elem)
           );
+          this.cdRef.detectChanges();
         }
       });
   }
 
+  setDataForCurrent(slicedData: ICharacter[]) {
+    this.slicedData = slicedData;
+    this.cdRef.detectChanges();
+  }
+
   changeData(elem: filterConfig) {
     this.data = this.baseFilterService.changeData(elem);
+    this.cdRef.detectChanges();
   }
 
   ngOnDestroy() {
