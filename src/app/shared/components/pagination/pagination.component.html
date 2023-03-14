@@ -1,6 +1,30 @@
-<div>
-  <button #prevBtn [disabled]="currentPage === 1" (click)="decrement()"><</button>
-  <h4>Page {{ currentPage }} of {{ maxPage }}</h4>
-  <h4>Items: {{ collectionLength }}</h4>
-  <button #nextBtn [disabled]="currentPage >= maxPage" (click)="increment()">></button>
+<div class="paginator">
+  <div class="paginator__info">
+    <h4>Page {{ currentPage }} of {{ maxPage }}</h4>
+    <p>Items: {{ collectionLength }}</p>
+  </div>
+
+  <button
+    class="paginator__btn"
+    type="button"
+    #prevBtn
+    [disabled]="currentPage === 1"
+    (click)="decrement()"
+  >
+    <svg class="paginator__icon">
+      <use href="assets/images/sprite.svg#icon-arrow-left"></use>
+    </svg>
+  </button>
+
+  <button
+    class="paginator__btn"
+    type="button"
+    #nextBtn
+    [disabled]="currentPage >= maxPage"
+    (click)="increment()"
+  >
+    <svg class="paginator__icon">
+      <use href="assets/images/sprite.svg#icon-arrow-right"></use>
+    </svg>
+  </button>
 </div>
