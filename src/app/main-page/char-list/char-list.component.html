@@ -18,7 +18,6 @@
   <app-pagination
     *ngIf="slicedData"
     [itemsPerPage]="8"
-    [currentPage]="currentPage"
     [inputData]="data"
     (OutputEmit)="setDataForCurrent($event)"
   ></app-pagination>
