@@ -5,5 +5,11 @@
 <symbol id="icon-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
 <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z" fill="black"/>
 </symbol>
+<symbol id="icon-arrow-left" viewBox="0 0 8 12">
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.7143" d="M6.429 11.143l-5.143-5.143 5.143-5.143"></path>
+</symbol>
+<symbol id="icon-arrow-right" viewBox="0 0 8 12">
+<path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.7143" d="M1.286 11.143l5.143-5.143-5.143-5.143"></path>
+</symbol>
 </defs>
 </svg>

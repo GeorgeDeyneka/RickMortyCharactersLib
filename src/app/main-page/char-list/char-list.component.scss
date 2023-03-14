@@ -31,7 +31,15 @@
     &__wrapper {
       grid-template-columns: repeat(auto-fill, 240px);
       gap: 24px 20px;
-      padding: 44px 0 100px;
+      padding: 44px 0;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .char {
+    &__wrapper {
+      min-height: 602px;
     }
   }
 }

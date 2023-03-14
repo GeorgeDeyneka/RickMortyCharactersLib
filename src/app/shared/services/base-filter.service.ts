@@ -7,8 +7,8 @@ import { filterConfig } from 'src/app/models/interfaces/filter-config.interface'
 })
 export class BaseFilterService {
   public data: ICharacter[] = [];
-  public copyArr: ICharacter[] = [];
   private baseData: ICharacter[] = [];
+  public pageIndex: number;
 
   constructor() {}
 
@@ -41,8 +41,6 @@ export class BaseFilterService {
 
   setSort(elem: filterConfig) {
     this.data = [...(elem.search ? this.data : this.baseData)];
-
-    console.log(elem);
     this.data.sort(this.byField(elem.sort));
   }
 
