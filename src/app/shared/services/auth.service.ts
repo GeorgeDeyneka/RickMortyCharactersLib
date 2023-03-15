@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   initGoogleAuth() {
-      window?.google?.accounts?.id?.initialize({
+      window.google.accounts.id.initialize({
         client_id:
           '540624650745-g079h75k25g9aciqp1pl56giuf1kq8t2.apps.googleusercontent.com',
         auto_select: false,
@@ -41,7 +41,7 @@ export class AuthService {
   }
 
   initGoogleButton() {
-      window?.google?.accounts?.id?.renderButton(
+      window.google.accounts.id.renderButton(
         document.querySelector('#google-auth')!,
         {
           theme: 'filled_blue',
@@ -54,7 +54,7 @@ export class AuthService {
   }
 
   initGooglePrompt() {
-      window?.google?.accounts?.id?.prompt();
+      window.google.accounts.id.prompt();
   }
 
   decodeToken(credential: string) {

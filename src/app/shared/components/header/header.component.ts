@@ -30,9 +30,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.authService.getUserData().subscribe((data: authUserData) => {
       this.ngZone.run(() => {
         this.userData = data;
+
         if (data.email) {
           this.hideGoogleBtn = true;
           this.activeBtn = false;
+        } else {
+          this.hideGoogleBtn = false;
         }
         this.cdRef.detectChanges();
       });
@@ -41,11 +44,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.authService.initGoogleAuth();
-    this.authService.initGoogleButton();
 
     if (!this.userData.email) {
       this.authService.initGooglePrompt();
     }
+
+    this.authService.initGoogleButton();
   }
 
   openLogoutBtn() {
@@ -60,6 +64,5 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.sessionStorageService.removeData('userData');
     this.sessionStorageService.removeData('token');
     this.authService.setUserData(defaultUserData);
-    this.hideGoogleBtn = false;
   }
 }
