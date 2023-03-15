@@ -5,22 +5,22 @@
     &__item {
       border-radius: 4px;
       overflow: hidden;
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
       @include slide-shadow;
     }
 
     &__title {
       padding: 12px 16px 14px;
+      text-decoration: none;
+      color: var(--black);
     }
 
     &__name {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-    }
-
-    &__link {
-      text-decoration: none;
-      color: var(--black);
     }
 
     &__img {

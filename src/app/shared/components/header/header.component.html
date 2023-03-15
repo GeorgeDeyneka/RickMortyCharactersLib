@@ -1,0 +1,12 @@
+<header class="container">
+  <button *ngIf="!userData; else elseBlock" id="google-auth"></button>
+  <ng-template #elseBlock>
+    <div class="user__wrapper">
+      <img class="user__img" [src]="userData.picture" alt="user photo" />
+      <div class="user__info">
+        <h4>{{ userData.name }}</h4>
+        <p>{{ userData.email }}</p>
+      </div>
+    </div>
+  </ng-template>
+</header>

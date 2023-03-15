@@ -7,6 +7,7 @@ import {
 import { Subscription } from 'rxjs';
 import { ICharacter } from 'src/app/models/interfaces/character.interface';
 import { filterConfig } from 'src/app/models/interfaces/filter-config.interface';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { BaseFilterService } from 'src/app/shared/services/base-filter.service';
 import { BaseHttpService } from 'src/app/shared/services/base-http.service';
 import { SearchConfigService } from 'src/app/shared/services/search-config.service';
@@ -43,6 +44,7 @@ export class CharListComponent implements OnInit {
         }
       });
   }
+
 
   setDataForCurrent(slicedData: ICharacter[]) {
     this.slicedData = slicedData;

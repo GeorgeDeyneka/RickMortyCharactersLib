@@ -33,6 +33,7 @@
       border-radius: 50%;
       border: none;
       cursor: pointer;
+      @include bg-transition;
 
       &:disabled {
         opacity: 0.4;
@@ -41,7 +42,6 @@
 
       &:hover {
         background-color: var(--ligth-gray-hover);
-        transition: background-color 100ms ease-in;
       }
     }
   }
