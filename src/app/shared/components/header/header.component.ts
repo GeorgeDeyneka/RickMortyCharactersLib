@@ -38,7 +38,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       });
     });
   }
-  // add keyframes
 
   ngAfterViewInit(): void {
     this.authService.initGoogleAuth();

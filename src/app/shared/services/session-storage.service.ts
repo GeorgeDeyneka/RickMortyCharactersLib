@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class SessionStorageService {
   constructor() {}
 
-  getData<T>(key: string, returnedValue?: any): T | '' | any {
+  getData<T>(key: string, returnedValue?: any) {
     if (localStorage.getItem(key) != null) {
       return JSON.parse(localStorage.getItem(key)!);
     }

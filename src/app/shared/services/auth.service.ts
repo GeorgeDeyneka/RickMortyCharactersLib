@@ -12,8 +12,6 @@ export const defaultUserData: authUserData = {
   image: '',
 };
 
-// add credential interface
-
 @Injectable({
   providedIn: 'root',
 })
@@ -59,7 +57,7 @@ export class AuthService {
     window.google.accounts.id.prompt();
   }
 
-  decodeToken(credential: any) {
+  decodeToken(credential: string) {
     const decoded: decodedGoogleToken = jwt_decode(credential);
 
     const authorizedUsedData: authUserData = {
