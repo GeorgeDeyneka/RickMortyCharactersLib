@@ -1,20 +1,24 @@
 <header class="container">
-  <button *ngIf="!userData; else elseBlock" id="google-auth"></button>
+  <button
+    [ngClass]="{
+      hide: hideGoogleBtn
+    }"
+    id="google-auth"
+  ></button>
 
-  <ng-template #elseBlock>
-    <div
-      (click)="openLogoutBtn()"
-      (mouseleave)="closeLogoutBtn()"
-      class="user__wrapper"
-    >
-      <img class="user__img" [src]="userData.picture" alt="user photo" />
-      <div class="user__info">
-        <h4>{{ userData.name }}</h4>
-        <p>{{ userData.email }}</p>
-      </div>
-      <button class="user__logout" *ngIf="activeBtn">
-        LogOut
-      </button>
+  <div
+    *ngIf="userData.email"
+    (click)="openLogoutBtn()"
+    (mouseleave)="closeLogoutBtn()"
+    class="user__wrapper"
+  >
+    <img class="user__img" [src]="userData.image" alt="user photo" />
+    <div class="user__info">
+      <h4>{{ userData.name }}</h4>
+      <p>{{ userData.email }}</p>
     </div>
-  </ng-template>
+    <button class="user__logout-btn" (click)="logOut()" *ngIf="activeBtn">
+      LogOut
+    </button>
+  </div>
 </header>
