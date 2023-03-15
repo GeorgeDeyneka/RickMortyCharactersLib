@@ -31,30 +31,30 @@ export class AuthService {
   }
 
   initGoogleAuth() {
-    window.google.accounts.id.initialize({
-      client_id:
-        '540624650745-g079h75k25g9aciqp1pl56giuf1kq8t2.apps.googleusercontent.com',
-      auto_select: false,
-      cancel_on_tap_outside: false,
-      callback: (e) => this.decodeToken(e.credential),
-    });
+      window?.google?.accounts?.id?.initialize({
+        client_id:
+          '540624650745-g079h75k25g9aciqp1pl56giuf1kq8t2.apps.googleusercontent.com',
+        auto_select: false,
+        cancel_on_tap_outside: false,
+        callback: (e) => this.decodeToken(e.credential),
+      });
   }
 
   initGoogleButton() {
-    window.google.accounts.id.renderButton(
-      document.querySelector('#google-auth')!,
-      {
-        theme: 'filled_blue',
-        size: 'large',
-        width: 150,
-        text: 'signin',
-        locale: 'en',
-      }
-    );
+      window?.google?.accounts?.id?.renderButton(
+        document.querySelector('#google-auth')!,
+        {
+          theme: 'filled_blue',
+          size: 'large',
+          width: 150,
+          text: 'signin',
+          locale: 'en',
+        }
+      );
   }
 
   initGooglePrompt() {
-    window.google.accounts.id.prompt();
+      window?.google?.accounts?.id?.prompt();
   }
 
   decodeToken(credential: string) {
