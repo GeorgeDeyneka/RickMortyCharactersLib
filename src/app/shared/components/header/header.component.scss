@@ -9,6 +9,7 @@
 
   .user {
     &__wrapper {
+      position: relative;
       display: flex;
       padding: 5px;
       align-items: center;
@@ -22,6 +23,19 @@
       &:hover {
         background-color: var(--ligth-gray-background);
       }
+    }
+
+    &__logout {
+      position: absolute;
+      bottom: -50%;
+      right: 5px;
+      border-radius: 5px;
+      padding: 5px 20px;
+      border: none;
+      bottom: -34px;
+      cursor: pointer;
+      color: var(--white);
+      background-color: var(--blue-background);
     }
 
     &__img {
