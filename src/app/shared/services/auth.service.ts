@@ -38,9 +38,9 @@ export class AuthService {
     window.google.accounts.id.renderButton(
       document.querySelector('#google-auth')!,
       {
-        theme: 'outline',
+        theme: 'filled_blue',
         size: 'large',
-        width: 100,
+        width: 150,
         text: 'signin',
         locale: 'en',
       }
