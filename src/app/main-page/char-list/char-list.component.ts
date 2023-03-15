@@ -29,8 +29,6 @@ export class CharListComponent implements OnInit {
   public slicedData: Array<ICharacter> = [];
   private filterSubj$: Subscription;
   private dataSubj$: Subscription;
-  public pageIndex: number;
-  public currentPage: number = 1;
 
   ngOnInit(): void {
     this.dataSubj$ = this.baseHttpService
@@ -42,10 +40,10 @@ export class CharListComponent implements OnInit {
           this.filterSubj$ = this.searchConfigService.configuration$.subscribe(
             (elem) => this.changeData(elem)
           );
-          this.cdRef.detectChanges();
         }
       });
   }
+
 
   setDataForCurrent(slicedData: ICharacter[]) {
     this.slicedData = slicedData;

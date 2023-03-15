@@ -1,3 +1,5 @@
+@import "/src/styles/mixins.scss";
+
 @media (min-width: 320px) {
   .nav {
     &__link {
@@ -9,6 +11,13 @@
       text-decoration: none;
       color: var(--black);
       letter-spacing: 1.3px;
+      max-width: fit-content;
+      border-radius: 4px;
+      @include bg-transition;
+
+      &:hover {
+        background-color: var(--ligth-gray-background);
+      }
     }
   }
 }

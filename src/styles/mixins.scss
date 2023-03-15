@@ -2,3 +2,7 @@
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2),
     -5px 5px 10px 0px rgba(0, 0, 0, 0.2);
 }
+
+@mixin bg-transition {
+  transition: background-color 100ms ease-in;
+}
