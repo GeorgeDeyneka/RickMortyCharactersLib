@@ -17,6 +17,14 @@
       gap: 32px 26.5px;
       padding: 16px 0 50px;
     }
+
+    &__no-results {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+    }
   }
 }
 
@@ -32,6 +40,10 @@
       grid-template-columns: repeat(auto-fill, 240px);
       gap: 24px 20px;
       padding: 44px 0;
+    }
+
+    &__no-results {
+      min-height: 280px;
     }
   }
 }
