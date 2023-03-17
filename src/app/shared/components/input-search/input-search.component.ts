@@ -16,7 +16,7 @@ import { SessionStorageService } from '../../services/session-storage.service';
 })
 export class InputSearchComponent implements OnInit, AfterViewInit {
   @ViewChild('searchInput') searchInput: ElementRef;
-  public value: string = this.sessionStorageService.getData('searchValue');
+  protected value: string = this.sessionStorageService.getData('searchValue');
 
   constructor(
     private searchConfigService: SearchConfigService,

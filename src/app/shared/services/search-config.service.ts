@@ -23,18 +23,18 @@ export class SearchConfigService {
     return this.configuration$.getValue();
   }
 
-  resetConfig() {
+  public resetConfig() {
     this.configuration$.next(this.defaultConfig);
   }
 
-  setSearch(search: string) {
+  public setSearch(search: string) {
     this.configuration$.next({
       ...this.defaultConfig,
       search,
     });
   }
 
-  setSort(sort: string) {
+  public setSort(sort: string) {
     this.configuration$.next({
       ...this.defaultConfig,
       sort,

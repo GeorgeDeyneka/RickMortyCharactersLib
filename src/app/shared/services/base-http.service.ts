@@ -12,11 +12,11 @@ export class BaseHttpService {
 
   private BASE_URL: string = 'https://rickandmortyapi.com/api/';
 
-  getList<T>(params: string = ''): Observable<T> {
+  public getList<T>(params: string = ''): Observable<T> {
     return this.http.get<T>(this.BASE_URL + this.path + params);
   }
 
-  getById<T>(id: string | number): Observable<T> {
+  public getById<T>(id: string | number): Observable<T> {
     return this.http.get<T>(this.BASE_URL + this.path + '/' + id);
   }
 }

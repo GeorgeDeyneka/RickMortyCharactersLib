@@ -52,15 +52,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.authService.initGoogleButton();
   }
 
-  openLogoutBtn() {
+  protected openLogoutBtn() {
     this.activeBtn = true;
   }
 
-  closeLogoutBtn() {
+  protected closeLogoutBtn() {
     this.activeBtn = false;
   }
 
-  logOut() {
+  protected logOut() {
     this.sessionStorageService.removeData('userData');
     this.sessionStorageService.removeData('token');
     this.authService.setUserData(defaultUserData);

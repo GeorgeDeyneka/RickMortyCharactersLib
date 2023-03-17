@@ -22,44 +22,43 @@ export class AuthService {
 
   constructor(private sessionStorageService: SessionStorageService) {}
 
-  getUserData() {
+  public getUserData() {
     return this.userData$.asObservable();
   }
 
-  setUserData(data: authUserData) {
+  public setUserData(data: authUserData) {
     this.userData$.next(data);
   }
 
-  initGoogleAuth() {
-      window.google.accounts.id.initialize({
-        client_id:
-          '540624650745-g079h75k25g9aciqp1pl56giuf1kq8t2.apps.googleusercontent.com',
-        auto_select: false,
-        cancel_on_tap_outside: false,
-        callback: (e) => this.decodeToken(e.credential),
-      });
+  public initGoogleAuth() {
+    window.google.accounts.id.initialize({
+      client_id:
+        '540624650745-g079h75k25g9aciqp1pl56giuf1kq8t2.apps.googleusercontent.com',
+      auto_select: false,
+      cancel_on_tap_outside: false,
+      callback: (e) => this.decodeToken(e.credential),
+    });
   }
 
-  initGoogleButton() {
-      window.google.accounts.id.renderButton(
-        document.querySelector('#google-auth')!,
-        {
-          theme: 'filled_blue',
-          size: 'large',
-          width: 150,
-          text: 'signin',
-          locale: 'en',
-        }
-      );
+  public initGoogleButton() {
+    window.google.accounts.id.renderButton(
+      document.querySelector('#google-auth')!,
+      {
+        theme: 'filled_blue',
+        size: 'large',
+        width: 150,
+        text: 'signin',
+        locale: 'en',
+      }
+    );
   }
 
-  initGooglePrompt() {
-      window.google.accounts.id.prompt();
+  public initGooglePrompt() {
+    window.google.accounts.id.prompt();
   }
 
-  decodeToken(credential: string) {
+  private decodeToken(credential: string) {
     const decoded: decodedGoogleToken = jwt_decode(credential);
-
     const authorizedUsedData: authUserData = {
       name: decoded.name,
       image: decoded.picture,
