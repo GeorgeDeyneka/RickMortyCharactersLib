@@ -17,19 +17,16 @@ import { SessionStorageService } from '../../services/session-storage.service';
   styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent implements OnChanges {
-  @ViewChild('prevBtn') prevBtn: ElementRef;
-  @ViewChild('nextBtn') nextBtn: ElementRef;
-
   @Output() OutputEmit = new EventEmitter<ICharacter[]>();
 
   @Input() public inputData: ICharacter[];
   @Input() public itemsPerPage: number = 8;
-  @Input() public currentPage: number = 1;
 
-  public slicedData: ICharacter[] = [];
-  public collectionLength: number;
-  public maxPage: number;
-  public cashMaxPage: number = 0;
+  protected currentPage: number = 1;
+  protected slicedData: ICharacter[] = [];
+  protected collectionLength: number;
+  protected maxPage: number;
+  private cashMaxPage: number = 0;
 
   constructor(private sessionStorageService: SessionStorageService) {}
 
@@ -39,7 +36,7 @@ export class PaginationComponent implements OnChanges {
     this.updateData();
   }
 
-  increment() {
+  protected increment() {
     if (this.currentPage < this.maxPage) {
       this.currentPage++;
       this.sessionStorageService.setData('currentPage', this.currentPage);
@@ -47,7 +44,7 @@ export class PaginationComponent implements OnChanges {
     }
   }
 
-  decrement() {
+  protected decrement() {
     if (this.currentPage > 1) {
       this.currentPage--;
       this.sessionStorageService.setData('currentPage', this.currentPage);
@@ -55,7 +52,7 @@ export class PaginationComponent implements OnChanges {
     }
   }
 
-  updateData() {
+  private updateData() {
     this.maxPage = Math.ceil(this.collectionLength / this.itemsPerPage);
 
     if (this.cashMaxPage && this.maxPage !== this.cashMaxPage) {

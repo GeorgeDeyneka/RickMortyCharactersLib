@@ -7,7 +7,6 @@
   <button
     class="paginator__btn"
     type="button"
-    #prevBtn
     [disabled]="currentPage === 1"
     (click)="decrement()"
   >
@@ -19,7 +18,6 @@
   <button
     class="paginator__btn"
     type="button"
-    #nextBtn
     [disabled]="currentPage >= maxPage"
     (click)="increment()"
   >

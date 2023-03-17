@@ -9,7 +9,7 @@ import { BaseHttpService } from 'src/app/shared/services/base-http.service';
   styleUrls: ['./char-details.component.scss'],
 })
 export class CharDetailsComponent implements OnInit {
-  public charItem: ICharacter;
+  protected charItem: ICharacter;
 
   constructor(
     private baseHttpService: BaseHttpService,

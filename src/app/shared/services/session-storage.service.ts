@@ -6,18 +6,18 @@ import { Injectable } from '@angular/core';
 export class SessionStorageService {
   constructor() {}
 
-  getData<T>(key: string, returnedValue?: any) {
+  public getData<T>(key: string, returnedValue?: any): T | any {
     if (localStorage.getItem(key) != null) {
       return JSON.parse(localStorage.getItem(key)!);
     }
     return returnedValue || '';
   }
 
-  setData<T>(key: string, data: T): void {
+  public setData<T>(key: string, data: T): void {
     localStorage.setItem(key, JSON.stringify(data));
   }
 
-  removeData(key: string): void {
+  public removeData(key: string): void {
     localStorage.removeItem(key);
   }
 }

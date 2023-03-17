@@ -12,14 +12,14 @@ export class BaseFilterService {
 
   constructor() {}
 
-  setData(data: ICharacter[]) {
+  public setData(data: ICharacter[]) {
     this.data = data;
     this.baseData = [...data];
 
     return this.data;
   }
 
-  changeData(elem: filterConfig) {
+  public changeData(elem: filterConfig) {
     if (elem.search) {
       this.setSearch(elem, 'name');
     }
@@ -31,7 +31,7 @@ export class BaseFilterService {
     return this.data;
   }
 
-  setSearch(elem: filterConfig, searchBy: string) {
+  private setSearch(elem: filterConfig, searchBy: string) {
     const regExp = new RegExp(elem.search, 'i');
 
     this.data = this.baseData.filter(
@@ -39,12 +39,12 @@ export class BaseFilterService {
     );
   }
 
-  setSort(elem: filterConfig) {
+  private setSort(elem: filterConfig) {
     this.data = [...(elem.search ? this.data : this.baseData)];
     this.data.sort(this.byField(elem.sort));
   }
 
-  byField(field: string) {
+  private byField(field: string) {
     return (a: any, b: any) =>
       a[field].toLowerCase() > b[field].toLowerCase() ? 1 : -1;
   }

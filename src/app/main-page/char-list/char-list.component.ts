@@ -45,12 +45,12 @@ export class CharListComponent implements OnInit {
   }
 
 
-  setDataForCurrent(slicedData: ICharacter[]) {
+  protected setDataForCurrent(slicedData: ICharacter[]) {
     this.slicedData = slicedData;
     this.cdRef.detectChanges();
   }
 
-  changeData(elem: filterConfig) {
+  private changeData(elem: filterConfig) {
     this.data = this.baseFilterService.changeData(elem);
     this.cdRef.detectChanges();
   }
