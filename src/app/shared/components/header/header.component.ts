@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { authUserData } from 'src/app/models/interfaces/auth-user-data.interface';
 import { AuthService, defaultUserData } from '../../services/auth.service';
-import { SessionStorageService } from '../../services/session-storage.service';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   constructor(
     private ngZone: NgZone,
     private authService: AuthService,
-    private sessionStorageService: SessionStorageService,
+    private localStorageService: LocalStorageService,
     private cdRef: ChangeDetectorRef
   ) {}
 
@@ -61,8 +61,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   protected logOut() {
-    this.sessionStorageService.removeData('userData');
-    this.sessionStorageService.removeData('token');
+    this.localStorageService.removeData('userData');
+    this.localStorageService.removeData('token');
     this.authService.setUserData(defaultUserData);
   }
 }

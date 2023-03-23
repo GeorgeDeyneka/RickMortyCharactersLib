@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { CredentialResponse } from 'google-one-tap';
-import { SessionStorageService } from './session-storage.service';
 import jwt_decode from 'jwt-decode';
 import { decodedGoogleToken } from 'src/app/models/interfaces/decoded.interface';
 import { BehaviorSubject } from 'rxjs';
 import { authUserData } from 'src/app/models/interfaces/auth-user-data.interface';
+import { LocalStorageService } from './local-storage.service';
 
 export const defaultUserData: authUserData = {
   name: '',
@@ -17,10 +17,10 @@ export const defaultUserData: authUserData = {
 })
 export class AuthService {
   private userData$ = new BehaviorSubject<authUserData>(
-    this.sessionStorageService.getData('userData', defaultUserData)
+    this.localStorageService.getData('userData', defaultUserData)
   );
 
-  constructor(private sessionStorageService: SessionStorageService) {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   public getUserData() {
     return this.userData$.asObservable();
@@ -65,8 +65,8 @@ export class AuthService {
       email: decoded.email,
     };
 
-    this.sessionStorageService.setData('userData', authorizedUsedData);
-    this.sessionStorageService.setData('token', credential);
+    this.localStorageService.setData('userData', authorizedUsedData);
+    this.localStorageService.setData('token', credential);
 
     this.setUserData(authorizedUsedData);
   }
