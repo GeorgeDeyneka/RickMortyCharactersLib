@@ -38,7 +38,93 @@ This is my technical task, written in Angular. Here I am building a library base
 - ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 
-<!-- ## Usage -->
+## Usage
+
+### Main Page
+<div>
+  <ul>
+    <li>
+So, when you open the application, you see in front of you a small library consisting of Rick & Morty characters.
+    </li>
+    </br>
+    <li>
+You can log in with your Google account by clicking on the button.
+    </li>
+        </br>
+    <li>
+Also, when you enter the page, you will see a modal window asking you to sign in with your Google account. After authorization, you can also log out by clicking on the block with information about your account.
+    </li>
+  </ul>
+  </br>
+<img src="demo-images/main-page.png" alt="main-page-demo" width="1000">
+</div>
+
+</br>
+
+---
+
+### Pagination
+<div>
+  <ul>
+    <li>
+Please note that pagination has been added to the application to facilitate page navigation.
+    </li>
+    </br>
+    <li>
+It works in conjunction with the browser's memory, so if you reload the page or view information about a certain character, don't worry: you will stay on the same page you were on.
+    </li>
+    </br>
+    <li>
+I wrote this pagination myself, without using any third-party libraries at all.
+    </li>
+  </ul>
+  </br>
+<img src="demo-images/pagination.png" alt="pagination-demo" width="1000">
+</div>
+
+</br>
+
+---
+
+### Details Page
+<div>
+  <ul>
+    <li>
+When you click on a card with a character, you get to the details page.
+    </li>
+    </br>
+    <li>
+Here you can view brief information about the character, as well as return to the main page.
+    </li>
+  </ul>
+  </br>
+<img src="demo-images/details.png" alt="details-page-demo" width="1000">
+</div>
+
+</br>
+
+---
+
+### Search
+<div>
+  <ul>
+    <li>
+You can also search for the characters you need.
+    </li>
+    </br>
+    <li>
+The search is case-insensitive, so if you write "RICK" or "ricK" for example, it won't affect the search results.
+    </li>
+    </br>
+    <li>
+The search also works in conjunction with memory, so that when you reload or navigate to other pages, your input data will be saved.
+    </li>
+  </ul>
+  </br>
+<img src="demo-images/search.png" alt="search-demo" width="1000">
+</div>
+
+</br>
 
 
 ## Contributing
